@@ -143,5 +143,9 @@ away_df <- all_games_df %>%
 # Combine home and away data into long-form
 long_form_df <- bind_rows(home_df, away_df)
 
+# Calculate implied probability of winning
+long_form_df <- long_form_df %>%
+  mutate(Implied_Win_Prob = 1 / Pinnacle_Odds)
+
 # Save the long-form data to a CSV file
 write_csv(long_form_df, file.path(clean_dir, "long_form_games.csv"), na = "")
