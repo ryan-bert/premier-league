@@ -42,7 +42,7 @@ fields_map <- c(
 raw_files <- list.files(raw_dir, pattern = "\\.csv$", full.names = TRUE)
 
 # Define initial df for combined data
-matches_df <- data.frame()
+all_games_df <- data.frame()
 
 # Iterate over each file
 for (file in raw_files) {
@@ -90,9 +90,14 @@ for (file in raw_files) {
   season_name <- paste0("season_", season_df$Season[1], ".csv")
   write_csv(season_df, file.path(seasons_dir, season_name), na = "")
 
-  # Append the season data to the matches_df
-  matches_df <- matches_df %>%
+  # Append the season data to the all_games_df
+  all_games_df <- all_games_df %>%
     bind_rows(season_df)
 }
 
-unique(matches_df$Season)
+# Make season 1st column
+all_games_df <- all_games_df %>%
+  select(Season, everything())
+
+# Save the combined game data to a CSV file
+write_csv(all_games_df, file.path(clean_dir, "all games.csv"), na = "")
