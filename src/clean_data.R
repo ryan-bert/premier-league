@@ -86,6 +86,10 @@ for (file in raw_files) {
       max(year(Date))
     ))
 
+  # Arrange by Date
+  all_games_df <- all_games_df %>%
+    arrange(Date, Home_Team)
+
   # Save the cleaned season data to a CSV file
   season_name <- paste0("season_", season_df$Season[1], ".csv")
   write_csv(season_df, file.path(seasons_dir, season_name), na = "")
@@ -98,6 +102,10 @@ for (file in raw_files) {
 # Make season 1st column
 all_games_df <- all_games_df %>%
   select(Season, everything())
+
+# Arrange by Date
+all_games_df <- all_games_df %>%
+  arrange(Date, Home_Team)
 
 # Save the combined game data to a CSV file
 write_csv(all_games_df, file.path(clean_dir, "all games.csv"), na = "")
