@@ -1,6 +1,7 @@
 suppressMessages({
   library(readr)
   library(dplyr)
+  library(lubridate)
 })
 
 # Define paths
@@ -43,9 +44,6 @@ raw_files <- list.files(raw_dir, pattern = "\\.csv$", full.names = TRUE)
 # Define initial df for combined data
 matches_df <- data.frame()
 
-# Define a counter for season grouping
-counter <- 1
-
 # Iterate over each file
 for (file in raw_files) {
 
@@ -77,14 +75,11 @@ for (file in raw_files) {
       !is.na(Full_Time_Away_Goals)
     )
 
-  # Add a Season grouping column
+  # Format the Date column
   season_df <- season_df %>%
-    mutate(Season_Group = counter)
+    mutate(Date = dmy(Date))
 
   # Append the season data to the matches_df
   matches_df <- matches_df %>%
     bind_rows(season_df)
-
-  # Increment the counter for the next season
-  counter <- counter + 1
 }
