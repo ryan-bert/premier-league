@@ -1,14 +1,19 @@
+rm(list = ls())
+
 suppressMessages({
   library(readr)
   library(dplyr)
   library(lubridate)
 })
 
+############################ DEFINE VARIABLES ############################
+
 # Define paths
 current_dir <- dirname(sys.frame(1)$ofile)
 raw_dir <- file.path(current_dir, "../data/raw_data")
 clean_dir <- file.path(current_dir, "../data/clean_data")
 seasons_dir <- file.path(current_dir, "../data/clean_data/seasons")
+raw_files <- list.files(raw_dir, pattern = "\\.csv$", full.names = TRUE)
 
 # Define map of fields
 fields_map <- c(
@@ -16,8 +21,8 @@ fields_map <- c(
   Home_Team = "HomeTeam",
   Away_Team = "AwayTeam",
   Full_Time_Result = "FTR",
-  Full_Time_Home_Goals = "FTHG",
-  Full_Time_Away_Goals = "FTAG",
+  Home_Full_Time_Goals = "FTHG",
+  Away_Full_Time_Goals = "FTAG",
   Home_Shots = "HS",
   Away_Shots = "AS",
   Home_Shots_On_Target = "HST",
@@ -30,16 +35,15 @@ fields_map <- c(
   Away_Yellow_Cards = "AY",
   Home_Red_Cards = "HR",
   Away_Red_Cards = "AR",
-  Bet365_Home_Odds = "B365H",
-  Bet365_Draw_Odds = "B365D",
-  Bet365_Away_Odds = "B365A",
-  Pinnacle_Home_Odds = "PSCH",
-  Pinnacle_Draw_Odds = "PSCD",
-  Pinnacle_Away_Odds = "PSCA"
+  Home_Bet365_Odds = "B365H",
+  Draw_Bet365_Odds = "B365D",
+  Away_Bet365_Odds = "B365A",
+  Home_Pinnacle_Odds = "PSCH",
+  Draw_Pinnacle_Odds = "PSCD",
+  Away_Pinnacle_Odds = "PSCA"
 )
 
-# List all CSV files in the raw data directory
-raw_files <- list.files(raw_dir, pattern = "\\.csv$", full.names = TRUE)
+########################## CLEAN & COMBINE DATA ##########################
 
 # Define initial df for combined data
 all_games_df <- data.frame()
@@ -87,8 +91,8 @@ for (file in raw_files) {
     ))
 
   # Arrange by Date
-  all_games_df <- all_games_df %>%
-    arrange(Date, Home_Team)
+  season_df <- season_df %>%
+    arrange(Date)
 
   # Save the cleaned season data to a CSV file
   season_name <- paste0("season_", season_df$Season[1], ".csv")
@@ -105,7 +109,10 @@ all_games_df <- all_games_df %>%
 
 # Arrange by Date
 all_games_df <- all_games_df %>%
-  arrange(Date, Home_Team)
+  arrange(Date)
 
 # Save the combined game data to a CSV file
-write_csv(all_games_df, file.path(clean_dir, "all games.csv"), na = "")
+write_csv(all_games_df, file.path(clean_dir, "all_games.csv"), na = "")
+
+####################### CONVERT TO LONG-FORM DATA #######################
+
