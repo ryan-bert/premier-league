@@ -1,4 +1,4 @@
-Date,Home_Team,Away_Team,Full_Time_Result,Full_Time_Home_Goals,Full_Time_Away_Goals,Home_Shots,Away_Shots,Home_Shots_On_Target,Away_Shots_On_Target,Home_Corners,Away_Corners,Home_Fouls,Away_Fouls,Home_Yellow_Cards,Away_Yellow_Cards,Home_Red_Cards,Away_Red_Cards,Bet365_Home_Odds,Bet365_Draw_Odds,Bet365_Away_Odds,Pinnacle_Home_Odds,Pinnacle_Draw_Odds,Pinnacle_Away_Odds,Season
+Date,Home_Team,Away_Team,Full_Time_Result,Home_Full_Time_Goals,Away_Full_Time_Goals,Home_Shots,Away_Shots,Home_Shots_On_Target,Away_Shots_On_Target,Home_Corners,Away_Corners,Home_Fouls,Away_Fouls,Home_Yellow_Cards,Away_Yellow_Cards,Home_Red_Cards,Away_Red_Cards,Home_Bet365_Odds,Draw_Bet365_Odds,Away_Bet365_Odds,Home_Pinnacle_Odds,Draw_Pinnacle_Odds,Away_Pinnacle_Odds,Season
 2024-08-16,Man United,Fulham,H,1,0,14,10,5,2,7,8,12,10,2,3,0,0,1.6,4.2,5.25,1.65,4.23,5.28,2024-2025
 2024-08-17,Ipswich,Liverpool,A,0,2,7,18,2,5,2,10,9,18,3,1,0,0,8.5,5.5,1.33,8.14,6.09,1.34,2024-2025
 2024-08-17,Arsenal,Wolves,H,2,0,18,9,6,3,8,2,17,14,2,2,0,0,1.18,7.5,13,1.15,9.05,18.76,2024-2025

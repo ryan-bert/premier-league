@@ -1,4 +1,4 @@
-Date,Home_Team,Away_Team,Full_Time_Result,Full_Time_Home_Goals,Full_Time_Away_Goals,Home_Shots,Away_Shots,Home_Shots_On_Target,Away_Shots_On_Target,Home_Corners,Away_Corners,Home_Fouls,Away_Fouls,Home_Yellow_Cards,Away_Yellow_Cards,Home_Red_Cards,Away_Red_Cards,Bet365_Home_Odds,Bet365_Draw_Odds,Bet365_Away_Odds,Season
+Date,Home_Team,Away_Team,Full_Time_Result,Home_Full_Time_Goals,Away_Full_Time_Goals,Home_Shots,Away_Shots,Home_Shots_On_Target,Away_Shots_On_Target,Home_Corners,Away_Corners,Home_Fouls,Away_Fouls,Home_Yellow_Cards,Away_Yellow_Cards,Home_Red_Cards,Away_Red_Cards,Home_Bet365_Odds,Draw_Bet365_Odds,Away_Bet365_Odds,Season
 2002-08-17,Blackburn,Sunderland,D,0,0,15,7,5,3,9,1,14,11,1,2,0,0,1.727,3.25,4.333,2002-2003
 2002-08-17,Charlton,Chelsea,A,2,3,5,21,5,12,3,6,10,12,0,3,1,0,2.8,3.25,2.2,2002-2003
 2002-08-17,Everton,Tottenham,D,2,2,13,10,9,5,10,5,18,4,1,1,0,0,2.25,3.25,2.75,2002-2003

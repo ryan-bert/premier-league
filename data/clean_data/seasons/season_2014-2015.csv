@@ -1,4 +1,4 @@
-Date,Home_Team,Away_Team,Full_Time_Result,Full_Time_Home_Goals,Full_Time_Away_Goals,Home_Shots,Away_Shots,Home_Shots_On_Target,Away_Shots_On_Target,Home_Corners,Away_Corners,Home_Fouls,Away_Fouls,Home_Yellow_Cards,Away_Yellow_Cards,Home_Red_Cards,Away_Red_Cards,Bet365_Home_Odds,Bet365_Draw_Odds,Bet365_Away_Odds,Pinnacle_Home_Odds,Pinnacle_Draw_Odds,Pinnacle_Away_Odds,Season
+Date,Home_Team,Away_Team,Full_Time_Result,Home_Full_Time_Goals,Away_Full_Time_Goals,Home_Shots,Away_Shots,Home_Shots_On_Target,Away_Shots_On_Target,Home_Corners,Away_Corners,Home_Fouls,Away_Fouls,Home_Yellow_Cards,Away_Yellow_Cards,Home_Red_Cards,Away_Red_Cards,Home_Bet365_Odds,Draw_Bet365_Odds,Away_Bet365_Odds,Home_Pinnacle_Odds,Draw_Pinnacle_Odds,Away_Pinnacle_Odds,Season
 2014-08-16,Arsenal,Crystal Palace,H,2,1,14,4,6,2,9,3,13,19,2,2,0,1,1.25,6.5,15,1.29,5.9,12.75,2014-2015
 2014-08-16,Leicester,Everton,D,2,2,11,13,3,3,3,6,16,10,1,1,0,0,3.2,3.4,2.4,3.11,3.4,2.47,2014-2015
 2014-08-16,Man United,Swansea,A,1,2,14,5,5,4,4,0,14,20,2,4,0,0,1.36,5,11,1.45,4.81,8.25,2014-2015

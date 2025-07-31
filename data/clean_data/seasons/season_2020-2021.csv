@@ -1,4 +1,4 @@
-Date,Home_Team,Away_Team,Full_Time_Result,Full_Time_Home_Goals,Full_Time_Away_Goals,Home_Shots,Away_Shots,Home_Shots_On_Target,Away_Shots_On_Target,Home_Corners,Away_Corners,Home_Fouls,Away_Fouls,Home_Yellow_Cards,Away_Yellow_Cards,Home_Red_Cards,Away_Red_Cards,Bet365_Home_Odds,Bet365_Draw_Odds,Bet365_Away_Odds,Pinnacle_Home_Odds,Pinnacle_Draw_Odds,Pinnacle_Away_Odds,Season
+Date,Home_Team,Away_Team,Full_Time_Result,Home_Full_Time_Goals,Away_Full_Time_Goals,Home_Shots,Away_Shots,Home_Shots_On_Target,Away_Shots_On_Target,Home_Corners,Away_Corners,Home_Fouls,Away_Fouls,Home_Yellow_Cards,Away_Yellow_Cards,Home_Red_Cards,Away_Red_Cards,Home_Bet365_Odds,Draw_Bet365_Odds,Away_Bet365_Odds,Home_Pinnacle_Odds,Draw_Pinnacle_Odds,Away_Pinnacle_Odds,Season
 2020-09-12,Fulham,Arsenal,A,0,3,5,13,2,6,2,3,12,12,2,2,0,0,6,4.33,1.53,5.48,3.98,1.69,2020-2021
 2020-09-12,Crystal Palace,Southampton,H,1,0,5,9,3,5,7,3,14,11,2,1,0,0,3.1,3.25,2.37,3.09,3.27,2.54,2020-2021
 2020-09-12,Liverpool,Leeds,H,4,3,22,6,6,3,9,0,9,6,1,0,0,0,1.28,6,9.5,1.28,6.34,11.38,2020-2021

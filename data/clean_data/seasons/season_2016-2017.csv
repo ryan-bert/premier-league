@@ -1,4 +1,4 @@
-Date,Home_Team,Away_Team,Full_Time_Result,Full_Time_Home_Goals,Full_Time_Away_Goals,Home_Shots,Away_Shots,Home_Shots_On_Target,Away_Shots_On_Target,Home_Corners,Away_Corners,Home_Fouls,Away_Fouls,Home_Yellow_Cards,Away_Yellow_Cards,Home_Red_Cards,Away_Red_Cards,Bet365_Home_Odds,Bet365_Draw_Odds,Bet365_Away_Odds,Pinnacle_Home_Odds,Pinnacle_Draw_Odds,Pinnacle_Away_Odds,Season
+Date,Home_Team,Away_Team,Full_Time_Result,Home_Full_Time_Goals,Away_Full_Time_Goals,Home_Shots,Away_Shots,Home_Shots_On_Target,Away_Shots_On_Target,Home_Corners,Away_Corners,Home_Fouls,Away_Fouls,Home_Yellow_Cards,Away_Yellow_Cards,Home_Red_Cards,Away_Red_Cards,Home_Bet365_Odds,Draw_Bet365_Odds,Away_Bet365_Odds,Home_Pinnacle_Odds,Draw_Pinnacle_Odds,Away_Pinnacle_Odds,Season
 2016-08-13,Burnley,Swansea,A,0,1,10,17,3,9,7,4,10,14,3,2,0,0,2.4,3.3,3.25,2.79,3.16,2.89,2016-2017
 2016-08-13,Crystal Palace,West Brom,A,0,1,14,13,4,3,3,6,12,15,2,2,0,0,2,3.3,4.5,2.25,3.15,3.86,2016-2017
 2016-08-13,Everton,Tottenham,D,1,1,12,13,6,4,5,6,10,14,0,0,0,0,3.2,3.4,2.4,3.64,3.54,2.16,2016-2017
