@@ -75,8 +75,8 @@ for (file in raw_files) {
       !is.na(Home_Team) &
       !is.na(Away_Team) &
       !is.na(Full_Time_Result) &
-      !is.na(Full_Time_Home_Goals) &
-      !is.na(Full_Time_Away_Goals)
+      !is.na(Home_Full_Time_Goals) &
+      !is.na(Away_Full_Time_Goals)
     )
 
   # Format the Date column
@@ -116,3 +116,32 @@ write_csv(all_games_df, file.path(clean_dir, "all_games.csv"), na = "")
 
 ####################### CONVERT TO LONG-FORM DATA #######################
 
+# Home related data
+home_df <- all_games_df %>%
+  select(Season, Date, Full_Time_Result, matches("^Home")) %>%
+  rename_with(~ sub("^Home_", "", .), everything()) %>%
+  mutate(Location = "Home") %>%
+  mutate(Result = case_when(
+    Full_Time_Result == "H" ~ "Win",
+    Full_Time_Result == "D" ~ "Draw",
+    Full_Time_Result == "A" ~ "Lose"
+  )) %>%
+  select(-Full_Time_Result)
+
+# Away related data
+away_df <- all_games_df %>%
+  select(Season, Date, Full_Time_Result, matches("^Away")) %>%
+  rename_with(~ sub("^Away_", "", .), everything()) %>%
+  mutate(Location = "Away") %>%
+  mutate(Result = case_when(
+    Full_Time_Result == "A" ~ "Win",
+    Full_Time_Result == "D" ~ "Draw",
+    Full_Time_Result == "H" ~ "Lose"
+  )) %>%
+  select(-Full_Time_Result)
+
+# Combine home and away data into long-form
+long_form_df <- bind_rows(home_df, away_df)
+
+# Save the long-form data to a CSV file
+write_csv(long_form_df, file.path(clean_dir, "long_form_games.csv"), na = "")
