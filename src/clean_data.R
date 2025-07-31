@@ -79,7 +79,20 @@ for (file in raw_files) {
   season_df <- season_df %>%
     mutate(Date = dmy(Date))
 
+  # Determine season from Date column
+  season_df <- season_df %>%
+    mutate(Season = paste0(
+      min(year(Date)), "-",
+      max(year(Date))
+    ))
+
+  # Save the cleaned season data to a CSV file
+  season_name <- paste0("season_", season_df$Season[1], ".csv")
+  write_csv(season_df, file.path(seasons_dir, season_name), na = "")
+
   # Append the season data to the matches_df
   matches_df <- matches_df %>%
     bind_rows(season_df)
 }
+
+unique(matches_df$Season)
