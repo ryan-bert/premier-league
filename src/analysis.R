@@ -27,22 +27,22 @@ away_games_df <- games_long_df %>%
 home_games_df <- home_games_df %>%
   left_join(
     away_games_df %>%
-      select(Match_ID, Win_Pinnacle_Odds, Win_Bet365_Odds) %>%
+      select(Game_ID, Win_Pinnacle_Odds, Win_Bet365_Odds) %>%
       rename(
         Lose_Pinnacle_Odds = Win_Pinnacle_Odds,
         Lose_Bet365_Odds = Win_Bet365_Odds
       ),
-    by = "Match_ID"
+    by = "Game_ID"
   )
 away_games_df <- away_games_df %>%
   left_join(
     home_games_df %>%
-      select(Match_ID, Win_Pinnacle_Odds, Win_Bet365_Odds) %>%
+      select(Game_ID, Win_Pinnacle_Odds, Win_Bet365_Odds) %>%
       rename(
         Lose_Pinnacle_Odds = Win_Pinnacle_Odds,
         Lose_Bet365_Odds = Win_Bet365_Odds
       ),
-    by = "Match_ID"
+    by = "Game_ID"
   )
 
 # Combine back into a single dataframe
@@ -52,8 +52,8 @@ games_long_df <- bind_rows(home_games_df, away_games_df)
 games_long_df <- games_long_df %>%
   left_join(
     all_games_df %>%
-      select(Match_ID, Draw_Pinnacle_Odds, Draw_Bet365_Odds),
-    by = "Match_ID"
+      select(Game_ID, Draw_Pinnacle_Odds, Draw_Bet365_Odds),
+    by = "Game_ID"
   )
 
 # Calculate implied probabilities
@@ -73,3 +73,13 @@ games_long_df <- games_long_df %>%
     Total_Pinnacle_Prob = Win_Pinnacle_Prob + Lose_Pinnacle_Prob + Draw_Pinnacle_Prob,
     Total_Bet365_Prob = Win_Bet365_Prob + Lose_Bet365_Prob + Draw_Bet365_Prob
   )
+
+# Total probabilities for each game
+total_prob_df <- games_long_df %>%
+  group_by(Game_ID) %>%
+  summarise(
+    Total_Pinnacle_Prob = mean(Total_Pinnacle_Prob),
+    Total_Bet365_Prob = mean(Total_Bet365_Prob)
+  ) %>%
+  ungroup()
+

@@ -1,4 +1,4 @@
-Match_ID,Season,Date,Team,Full_Time_Goals,Shots,Shots_On_Target,Corners,Fouls,Yellow_Cards,Red_Cards,Win_Bet365_Odds,Win_Pinnacle_Odds,Location,Result
+Game_ID,Season,Date,Team,Full_Time_Goals,Shots,Shots_On_Target,Corners,Fouls,Yellow_Cards,Red_Cards,Win_Bet365_Odds,Win_Pinnacle_Odds,Location,Result
 1,2000-2001,2000-08-19,Charlton,4,17,14,6,13,1,0,,,Home,Win
 2,2000-2001,2000-08-19,Chelsea,4,17,10,7,19,1,0,,,Home,Win
 3,2000-2001,2000-08-19,Coventry,1,6,3,8,15,5,1,,,Home,Lose
