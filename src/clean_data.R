@@ -123,7 +123,7 @@ write_csv(all_games_df, file.path(clean_dir, "all_games.csv"), na = "")
 
 # Home related data
 home_df <- all_games_df %>%
-  select(Season, Date, Full_Time_Result, matches("^Home")) %>%
+  select(Match_ID, Season, Date, Full_Time_Result, matches("^Home")) %>%
   rename_with(~ sub("^Home_", "", .), everything()) %>%
   mutate(Location = "Home") %>%
   mutate(Result = case_when(
@@ -135,7 +135,7 @@ home_df <- all_games_df %>%
 
 # Away related data
 away_df <- all_games_df %>%
-  select(Season, Date, Full_Time_Result, matches("^Away")) %>%
+  select(Match_ID, Season, Date, Full_Time_Result, matches("^Away")) %>%
   rename_with(~ sub("^Away_", "", .), everything()) %>%
   mutate(Location = "Away") %>%
   mutate(Result = case_when(
