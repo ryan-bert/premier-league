@@ -1,4 +1,4 @@
-Date,Home_Team,Away_Team,Full_Time_Result,Home_Full_Time_Goals,Away_Full_Time_Goals,Home_Shots,Away_Shots,Home_Shots_On_Target,Away_Shots_On_Target,Home_Corners,Away_Corners,Home_Fouls,Away_Fouls,Home_Yellow_Cards,Away_Yellow_Cards,Home_Red_Cards,Away_Red_Cards,Home_Bet365_Odds,Draw_Bet365_Odds,Away_Bet365_Odds,Season
+Date,Home_Team,Away_Team,Full_Time_Result,Home_Full_Time_Goals,Away_Full_Time_Goals,Home_Shots,Away_Shots,Home_Shots_On_Target,Away_Shots_On_Target,Home_Corners,Away_Corners,Home_Fouls,Away_Fouls,Home_Yellow_Cards,Away_Yellow_Cards,Home_Red_Cards,Away_Red_Cards,Home_Win_Bet365_Odds,Draw_Bet365_Odds,Away_Win_Bet365_Odds,Season
 2005-08-13,Aston Villa,Bolton,D,2,2,3,13,2,6,7,8,14,16,0,2,0,0,2.3,3.25,3,2005-2006
 2005-08-13,Everton,Man United,A,0,2,10,12,5,5,8,6,15,14,3,1,0,0,5,3.4,1.72,2005-2006
 2005-08-13,Fulham,Birmingham,D,0,0,15,7,7,4,6,6,12,13,1,2,0,0,2.37,3.25,2.87,2005-2006

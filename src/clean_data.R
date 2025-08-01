@@ -35,12 +35,12 @@ fields_map <- c(
   Away_Yellow_Cards = "AY",
   Home_Red_Cards = "HR",
   Away_Red_Cards = "AR",
-  Home_Bet365_Odds = "B365H",
+  Home_Win_Bet365_Odds = "B365H",
   Draw_Bet365_Odds = "B365D",
-  Away_Bet365_Odds = "B365A",
-  Home_Pinnacle_Odds = "PSCH",
+  Away_Win_Bet365_Odds = "B365A",
+  Home_Win_Pinnacle_Odds = "PSCH",
   Draw_Pinnacle_Odds = "PSCD",
-  Away_Pinnacle_Odds = "PSCA"
+  Away_Win_Pinnacle_Odds = "PSCA"
 )
 
 ########################## CLEAN & COMBINE DATA ##########################

@@ -1,4 +1,4 @@
-Date,Home_Team,Away_Team,Full_Time_Result,Home_Full_Time_Goals,Away_Full_Time_Goals,Home_Shots,Away_Shots,Home_Shots_On_Target,Away_Shots_On_Target,Home_Corners,Away_Corners,Home_Fouls,Away_Fouls,Home_Yellow_Cards,Away_Yellow_Cards,Home_Red_Cards,Away_Red_Cards,Home_Bet365_Odds,Draw_Bet365_Odds,Away_Bet365_Odds,Season
+Date,Home_Team,Away_Team,Full_Time_Result,Home_Full_Time_Goals,Away_Full_Time_Goals,Home_Shots,Away_Shots,Home_Shots_On_Target,Away_Shots_On_Target,Home_Corners,Away_Corners,Home_Fouls,Away_Fouls,Home_Yellow_Cards,Away_Yellow_Cards,Home_Red_Cards,Away_Red_Cards,Home_Win_Bet365_Odds,Draw_Bet365_Odds,Away_Win_Bet365_Odds,Season
 2006-08-19,Arsenal,Aston Villa,D,1,1,19,5,11,3,18,1,10,19,1,2,0,0,1.28,4.5,13,2006-2007
 2006-08-19,Bolton,Tottenham,H,2,0,8,9,6,6,6,3,19,22,0,1,0,0,2.62,3.2,2.6,2006-2007
 2006-08-19,Everton,Watford,H,2,1,6,12,2,8,0,6,12,13,2,2,0,0,1.66,3.4,5.5,2006-2007

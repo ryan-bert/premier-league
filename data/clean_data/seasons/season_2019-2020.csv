@@ -1,4 +1,4 @@
-Date,Home_Team,Away_Team,Full_Time_Result,Home_Full_Time_Goals,Away_Full_Time_Goals,Home_Shots,Away_Shots,Home_Shots_On_Target,Away_Shots_On_Target,Home_Corners,Away_Corners,Home_Fouls,Away_Fouls,Home_Yellow_Cards,Away_Yellow_Cards,Home_Red_Cards,Away_Red_Cards,Home_Bet365_Odds,Draw_Bet365_Odds,Away_Bet365_Odds,Home_Pinnacle_Odds,Draw_Pinnacle_Odds,Away_Pinnacle_Odds,Season
+Date,Home_Team,Away_Team,Full_Time_Result,Home_Full_Time_Goals,Away_Full_Time_Goals,Home_Shots,Away_Shots,Home_Shots_On_Target,Away_Shots_On_Target,Home_Corners,Away_Corners,Home_Fouls,Away_Fouls,Home_Yellow_Cards,Away_Yellow_Cards,Home_Red_Cards,Away_Red_Cards,Home_Win_Bet365_Odds,Draw_Bet365_Odds,Away_Win_Bet365_Odds,Home_Win_Pinnacle_Odds,Draw_Pinnacle_Odds,Away_Win_Pinnacle_Odds,Season
 2019-08-09,Liverpool,Norwich,H,4,1,15,12,7,5,11,2,9,9,0,2,0,0,1.14,10,19,1.14,10.43,19.63,2019-2020
 2019-08-10,West Ham,Man City,A,0,5,5,14,3,9,1,1,6,13,2,2,0,0,12,6.5,1.22,11.11,6.68,1.27,2019-2020
 2019-08-10,Bournemouth,Sheffield United,D,1,1,13,8,3,3,3,4,10,19,2,1,0,0,1.95,3.6,3.6,1.98,3.67,4.06,2019-2020

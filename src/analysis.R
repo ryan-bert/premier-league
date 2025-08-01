@@ -15,5 +15,5 @@ long_form_path <- file.path(current_dir, "../data/clean_data/long_form_games.csv
 all_games_df <- read_csv(all_games_path, show_col_types = FALSE)
 games_long_df <- read_csv(long_form_path, show_col_types = FALSE)
 
-print(head(all_games_df))
-print(head(games_long_df))
+######################### IMPLIED PROBABILITIES #########################
+
