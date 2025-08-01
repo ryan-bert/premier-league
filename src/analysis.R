@@ -66,3 +66,10 @@ games_long_df <- games_long_df %>%
     Draw_Pinnacle_Prob = 1 / Draw_Pinnacle_Odds,
     Draw_Bet365_Prob = 1 / Draw_Bet365_Odds
   )
+
+# Calculate total implied probabilities
+games_long_df <- games_long_df %>%
+  mutate(
+    Total_Pinnacle_Prob = Win_Pinnacle_Prob + Lose_Pinnacle_Prob + Draw_Pinnacle_Prob,
+    Total_Bet365_Prob = Win_Bet365_Prob + Lose_Bet365_Prob + Draw_Bet365_Prob
+  )
