@@ -4,6 +4,7 @@ suppressMessages({
   library(readr)
   library(dplyr)
   library(lubridate)
+  library(ggplot2)
 })
 
 # Define paths
@@ -74,12 +75,35 @@ games_long_df <- games_long_df %>%
     Total_Bet365_Prob = Win_Bet365_Prob + Lose_Bet365_Prob + Draw_Bet365_Prob
   )
 
-# Total probabilities for each game
-total_prob_df <- games_long_df %>%
+# Plot distribution of total probabilities with color legend
+games_long_df %>%
+  filter(!is.na(Total_Pinnacle_Prob) & !is.na(Total_Bet365_Prob)) %>%
   group_by(Game_ID) %>%
   summarise(
     Total_Pinnacle_Prob = mean(Total_Pinnacle_Prob),
     Total_Bet365_Prob = mean(Total_Bet365_Prob)
   ) %>%
-  ungroup()
+  ungroup() %>%
+ggplot() +
+  geom_density(aes(x = Total_Pinnacle_Prob, fill = "Pinnacle"), alpha = 0.3) +
+  geom_density(aes(x = Total_Bet365_Prob, fill = "Bet365"), alpha = 0.3) +
+  scale_fill_manual(values = c("Pinnacle" = "blue", "Bet365" = "red"), name = "Source") +
+  labs(
+    title = "Distribution of Total Implied Probabilities",
+    x = "Total Implied Probability",
+    y = "Density"
+  )
+ggsave(file.path(current_dir, "../output/total_probabilities_distribution.png"))
 
+# Per-team Pinnacle statistics
+prob_team_df <- games_long_df %>%
+  filter(!is.na(Total_Pinnacle_Prob)) %>%
+  group_by(Team) %>%
+  summarise(
+    n = n(),
+    Avg_Win_Pinnacle_Prob = mean(Win_Pinnacle_Prob, na.rm = TRUE),
+    Avg_Lose_Pinnacle_Prob = mean(Lose_Pinnacle_Prob, na.rm = TRUE),
+    Avg_Draw_Pinnacle_Prob = mean(Draw_Pinnacle_Prob, na.rm = TRUE),
+    Avg_Total_Pinnacle_Prob = mean(Total_Pinnacle_Prob, na.rm = TRUE)
+  ) %>%
+  ungroup()
