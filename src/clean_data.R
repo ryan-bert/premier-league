@@ -129,7 +129,7 @@ home_df <- all_games_df %>%
   mutate(Result = case_when(
     Full_Time_Result == "H" ~ "Win",
     Full_Time_Result == "D" ~ "Draw",
-    Full_Time_Result == "A" ~ "Lose"
+    Full_Time_Result == "A" ~ "Loss"
   )) %>%
   select(-Full_Time_Result)
 
@@ -141,7 +141,7 @@ away_df <- all_games_df %>%
   mutate(Result = case_when(
     Full_Time_Result == "A" ~ "Win",
     Full_Time_Result == "D" ~ "Draw",
-    Full_Time_Result == "H" ~ "Lose"
+    Full_Time_Result == "H" ~ "Loss"
   )) %>%
   select(-Full_Time_Result)
 
