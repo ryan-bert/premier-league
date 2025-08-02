@@ -3,6 +3,7 @@ rm(list = ls())
 suppressMessages({
   library(readr)
   library(dplyr)
+  library(tidyr)
   library(lubridate)
   library(ggplot2)
 })
@@ -16,7 +17,39 @@ long_form_path <- file.path(current_dir, "../data/clean_data/long_form_games.csv
 all_games_df <- read_csv(all_games_path, show_col_types = FALSE)
 games_long_df <- read_csv(long_form_path, show_col_types = FALSE)
 
-######################### BASIC TEAM STATISTICS #########################
+############################### FUNCTIONS ###############################
+
+# Summarise n recent years of data per team
+summarise_recent_years <- function(games_long_df, n_years) {
+
+  # Calculate the cutoff date for n years ago
+  cutoff_date <- max(games_long_df$Date) - years(n_years)
+
+  # Filter games from the last n years
+  recent_games_df <- games_long_df %>%
+    filter(Date >= cutoff_date)
+
+  # Summarise statistics per team
+  recent_team_stats <- recent_games_df %>%
+    group_by(Team) %>%
+    summarise(
+      Total_Games = n(),
+      Total_Points = sum(Points, na.rm = TRUE),
+      Avg_Points = mean(Points, na.rm = TRUE),
+      Win_Rate = sum(Result == "Win", na.rm = TRUE) / Total_Games,
+      Loss_Rate = sum(Result == "Loss", na.rm = TRUE) / Total_Games,
+      Draw_Rate = sum(Result == "Draw", na.rm = TRUE) / Total_Games
+    ) %>%
+    ungroup()
+
+  # Add n_years column
+  recent_team_stats <- recent_team_stats %>%
+    mutate(n_Years = n_years)
+
+  return(recent_team_stats)
+}
+
+############################ TEAM STATISTICS ############################
 
 # Assign points to each result
 games_long_df <- games_long_df %>%
@@ -28,18 +61,37 @@ games_long_df <- games_long_df %>%
     )
   )
 
-# Determine win/loss/draw rates
-basic_team_df <- games_long_df %>%
+# Determine stats over whole period
+all_time_team_df <- games_long_df %>%
   group_by(Team) %>%
   summarise(
     Total_Games = n(),
-    Total_Points = sum(Points, na.rm = TRUE),
-    Avg_Points = mean(Points, na.rm = TRUE),
+    Total_Points = sum(Points),
+    Avg_Points = mean(Points),
     Win_Rate = sum(Result == "Win") / Total_Games,
     Loss_Rate = sum(Result == "Loss") / Total_Games,
     Draw_Rate = sum(Result == "Draw") / Total_Games
   ) %>%
   ungroup()
+
+# Determine win/loss/draw rates
+team_stats_df <- bind_rows(
+  summarise_recent_years(games_long_df, 1),
+  summarise_recent_years(games_long_df, 3),
+  summarise_recent_years(games_long_df, 5),
+  summarise_recent_years(games_long_df, 10),
+  summarise_recent_years(games_long_df, 15),
+  summarise_recent_years(games_long_df, 20),
+  summarise_recent_years(games_long_df, 25)
+)
+
+# Pivot to wide form form important fields
+periods_win_df <- team_stats_df %>%
+  select(Team, n_Years, Win_Rate) %>%
+  pivot_wider(names_from = n_Years, values_from = Win_Rate, names_prefix = "Win_Rate_")
+period_points_df <- team_stats_df %>%
+  select(Team, n_Years, Avg_Points) %>%
+  pivot_wider(names_from = n_Years, values_from = Avg_Points, names_prefix = "Avg_Points_")
 
 ######################### IMPLIED PROBABILITIES #########################
 
