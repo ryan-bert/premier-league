@@ -34,11 +34,11 @@ summarise_recent_years <- function(games_long_df, n_years) {
     group_by(Team) %>%
     summarise(
       Total_Games = n(),
-      Total_Points = sum(Points, na.rm = TRUE),
-      Avg_Points = mean(Points, na.rm = TRUE),
-      Win_Rate = sum(Result == "Win", na.rm = TRUE) / Total_Games,
-      Loss_Rate = sum(Result == "Loss", na.rm = TRUE) / Total_Games,
-      Draw_Rate = sum(Result == "Draw", na.rm = TRUE) / Total_Games
+      Total_Points = sum(Points),
+      Avg_Points = mean(Points),
+      Win_Rate = sum(Result == "Win") / Total_Games,
+      Loss_Rate = sum(Result == "Loss") / Total_Games,
+      Draw_Rate = sum(Result == "Draw") / Total_Games
     ) %>%
     ungroup()
 
